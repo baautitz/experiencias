@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --sm-media-footer-height: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+
+    display: grid;
+    min-width: 300px;
+}
+
+main {
+    height: 100%;
+
+    padding: 10px 15px;
+    margin-bottom: var(--sm-media-footer-height);
+}
+
+p {
+    border: 2px solid rgb(77, 77, 77);
+    border-radius: 15px;
+
+    margin: 15px 0;
+    padding: 15px;
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: var(--sm-media-footer-height);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    place-items: center;
+    justify-content: center;
+
+    background-color: black;
+    border-top: 1px solid rgb(77, 77, 77);
+}
+
+.footer-btn {
+    display: grid;
+    place-items: center;
+    font-size: smaller;
+}
+
+.footer-btn > svg {
+    width: 20px;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        height: 100vh;
+        height: 100sh;
+
+        max-width: 1024px;
+
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: 
+        'footer main'
+        'footer main';
+    }
+
+    main {
+        margin-bottom: 0;
+        grid-area: main;
+    }
+
+    footer {
+        position: fixed;
+
+        display: flex;
+        justify-content: end;
+    }
+
+    .footer-container {
+        position: static;
+        grid-area: footer;
+
+        height: 100vh;
+        height: 100svh;
+
+        width: 200px;
+
+        padding: 20px 30px;
+
+        grid-template-columns: 0;
+        grid-template-rows: repeat(4, 50px);
+
+        align-items: center;
+        justify-items: start;
+
+        align-content: start;
+        justify-content: start;
+
+        border-top: 0;
+        border-right: 2px solid rgb(77, 77, 77);
+    }
+
+    .footer-btn {
+        grid-template-columns: 20px 1fr;
+
+        gap: 10px;
+
+        font-size: medium;
+    }
+
+    .footer-btn > svg {
+        width: 40px;
+    }
+    
+}
+
